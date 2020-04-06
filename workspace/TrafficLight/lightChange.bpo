@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="11">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poIdentifier name="Colors" org.eventb.core.type="ℙ(Colors)"/>
+<org.eventb.core.poIdentifier name="green" org.eventb.core.type="Colors"/>
+<org.eventb.core.poIdentifier name="red" org.eventb.core.type="Colors"/>
+<org.eventb.core.poIdentifier name="yellow" org.eventb.core.type="Colors"/>
+<org.eventb.core.poPredicate name="yellox" org.eventb.core.predicate="red∈Colors" org.eventb.core.source="/TrafficLight/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="yelloy" org.eventb.core.predicate="green∈Colors" org.eventb.core.source="/TrafficLight/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="yelloz" org.eventb.core.predicate="yellow∈Colors" org.eventb.core.source="/TrafficLight/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="yello{" org.eventb.core.predicate="partition(Colors,{red},{green},{yellow})" org.eventb.core.source="/TrafficLight/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poIdentifier name="light1" org.eventb.core.type="Colors"/>
+<org.eventb.core.poIdentifier name="light2" org.eventb.core.type="Colors"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTALLHYPContext5"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(red=green∧red=green)" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTContext5" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poIdentifier name="light1'" org.eventb.core.type="Colors"/>
+<org.eventb.core.poIdentifier name="light2'" org.eventb.core.type="Colors"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPContext5" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTIDENTContext5" org.eventb.core.poStamp="7"/>
+<org.eventb.core.poSequent name="redToyellow1/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTALLHYPContext6"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(yellow=green∧light2=green)" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poSequent#redToyellow1\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTContext6" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poIdentifier name="light1'" org.eventb.core.type="Colors"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPContext6" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTIDENTContext6" org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="light1=red" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#.|org.eventb.core.guard#'"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="redToyellow2/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="8">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTALLHYPContext7"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(light1=green∧yellow=green)" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#\/"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poSequent#redToyellow2\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTContext7" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="light2'" org.eventb.core.type="Colors"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPContext7" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTIDENTContext7" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="light2=red" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#\/|org.eventb.core.guard#'"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="yellowTogreen1/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="8">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTALLHYPContext8"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(green=green∧light2=green)" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#0"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poSequent#yellowTogreen1\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTContext8" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="light1'" org.eventb.core.type="Colors"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPContext8" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTIDENTContext8" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="light1=yellow" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#0|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="light2≠green" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#0|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="yellowTogreen2/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="9">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTALLHYPContext9"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(light1=green∧green=green)" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#1"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poSequent#yellowTogreen2\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTContext9" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="light2'" org.eventb.core.type="Colors"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPContext9" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTIDENTContext9" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="light2=yellow" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#1|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="light1≠green" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#1|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="greenTored1/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="10">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTALLHYPContext:"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(red=green∧light2=green)" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poSequent#greenTored1\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTContext:" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="light1'" org.eventb.core.type="Colors"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPContext:" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTIDENTContext:" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="light1=green" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#2|org.eventb.core.guard#'"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="greenTored2/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="10">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTALLHYPContext;"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(light1=green∧red=green)" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#3"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poSequent#greenTored2\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTContext;" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="light2'" org.eventb.core.type="Colors"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPContext;" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#EVTIDENTContext;" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="light2=green" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.event#3|org.eventb.core.guard#'"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/TrafficLight/lightChange.bpo|org.eventb.core.poFile#lightChange|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="7">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="light1∈Colors" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="light2∈Colors" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="¬(light1=green∧light2=green)" org.eventb.core.source="/TrafficLight/lightChange.bum|org.eventb.core.machineFile#lightChange|org.eventb.core.invariant#-"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
