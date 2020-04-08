@@ -9,14 +9,22 @@
 <org.eventb.core.axiom name="-" org.eventb.core.label="axm3" org.eventb.core.predicate="off ∈ HeaterState"/>
 <org.eventb.core.axiom name="." org.eventb.core.label="axm4" org.eventb.core.predicate="partition(HeaterState,{high},{low},{off})"/>
 <org.eventb.core.carrierSet name="/" org.eventb.core.identifier="SystemState"/>
-<org.eventb.core.constant name="0" org.eventb.core.identifier="UpdatePressureState"/>
-<org.eventb.core.constant name="1" org.eventb.core.identifier="UpdateHeaterState"/>
-<org.eventb.core.axiom name="2" org.eventb.core.label="axm5" org.eventb.core.predicate="UpdatePressureState ∈ SystemState"/>
-<org.eventb.core.axiom name="3" org.eventb.core.label="axm6" org.eventb.core.predicate="UpdateHeaterState ∈ SystemState"/>
-<org.eventb.core.axiom name="9" org.eventb.core.label="axm10" org.eventb.core.predicate="HelperState ∈ SystemState"/>
-<org.eventb.core.axiom name="4" org.eventb.core.label="axm7" org.eventb.core.predicate="partition(SystemState, {UpdatePressureState}, {UpdateHeaterState}, {HelperState})"/>
-<org.eventb.core.constant name="8" org.eventb.core.identifier="HelperState"/>
+<org.eventb.core.constant name="0" org.eventb.core.identifier="SensorState"/>
+<org.eventb.core.constant name="1" org.eventb.core.identifier="ControllerState"/>
+<org.eventb.core.axiom name="2" org.eventb.core.label="axm5" org.eventb.core.predicate="SensorState ∈ SystemState"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm6" org.eventb.core.predicate="ControllerState ∈ SystemState"/>
+<org.eventb.core.axiom name="axm6" org.eventb.core.label="axm17" org.eventb.core.predicate="TimerState ∈ SystemState"/>
+<org.eventb.core.axiom name="4" org.eventb.core.label="axm7" org.eventb.core.predicate="partition(SystemState, {ControllerState}, {SensorState}, {TimerState})"/>
+<org.eventb.core.constant name="cst8" org.eventb.core.identifier="TimerState"/>
 <org.eventb.core.constant name="5" org.eventb.core.identifier="TMAX"/>
 <org.eventb.core.axiom name="6" org.eventb.core.label="axm8" org.eventb.core.predicate="TMAX ∈ ℕ"/>
 <org.eventb.core.axiom name="7" org.eventb.core.label="axm9" org.eventb.core.predicate="TMAX = 5"/>
+<org.eventb.core.axiom name="cst3" org.eventb.core.label="axm11" org.eventb.core.predicate="Addresses ⊆ ℕ"/>
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm12" org.eventb.core.predicate="ValidAddresses ⊆ Addresses"/>
+<org.eventb.core.axiom name="axm2" org.eventb.core.label="axm13" org.eventb.core.predicate="MaxAddress ∈ ValidAddresses"/>
+<org.eventb.core.axiom name="axm4" org.eventb.core.label="axm14" org.eventb.core.predicate="MaxAddress = 100"/>
+<org.eventb.core.axiom name="axm3" org.eventb.core.label="axm15" org.eventb.core.predicate="∀x·(x ∈ ValidAddresses ⇔ x ≤ MaxAddress)"/>
+<org.eventb.core.constant name="cst5" org.eventb.core.identifier="Addresses"/>
+<org.eventb.core.constant name="cst6" org.eventb.core.identifier="ValidAddresses"/>
+<org.eventb.core.constant name="cst7" org.eventb.core.identifier="MaxAddress"/>
 </org.eventb.core.contextFile>

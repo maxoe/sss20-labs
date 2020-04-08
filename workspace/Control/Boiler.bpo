@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="5">
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poFile org.eventb.core.poStamp="20">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="20">
 <org.eventb.core.poIdentifier name="HeaterState" org.eventb.core.type="ℙ(HeaterState)"/>
 <org.eventb.core.poIdentifier name="SystemState" org.eventb.core.type="ℙ(SystemState)"/>
-<org.eventb.core.poIdentifier name="HelperState" org.eventb.core.type="SystemState"/>
+<org.eventb.core.poIdentifier name="Addresses" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="ControllerState" org.eventb.core.type="SystemState"/>
+<org.eventb.core.poIdentifier name="MaxAddress" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="SensorState" org.eventb.core.type="SystemState"/>
 <org.eventb.core.poIdentifier name="TMAX" org.eventb.core.type="ℤ"/>
-<org.eventb.core.poIdentifier name="UpdateHeaterState" org.eventb.core.type="SystemState"/>
-<org.eventb.core.poIdentifier name="UpdatePressureState" org.eventb.core.type="SystemState"/>
+<org.eventb.core.poIdentifier name="TimerState" org.eventb.core.type="SystemState"/>
+<org.eventb.core.poIdentifier name="ValidAddresses" org.eventb.core.type="ℙ(ℤ)"/>
 <org.eventb.core.poIdentifier name="high" org.eventb.core.type="HeaterState"/>
 <org.eventb.core.poIdentifier name="low" org.eventb.core.type="HeaterState"/>
 <org.eventb.core.poIdentifier name="off" org.eventb.core.type="HeaterState"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Control/Boiler.bpo|org.eventb.core.poFile#Boiler|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="5">
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Control/Boiler.bpo|org.eventb.core.poFile#Boiler|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="20">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="high∈HeaterState" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#+"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="low∈HeaterState" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#,"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="off∈HeaterState" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#-"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(HeaterState,{high},{low},{off})" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#."/>
-<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="UpdatePressureState∈SystemState" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#2"/>
-<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="UpdateHeaterState∈SystemState" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#3"/>
-<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="HelperState∈SystemState" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#9"/>
-<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="partition(SystemState,{UpdatePressureState},{UpdateHeaterState},{HelperState})" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#4"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="SensorState∈SystemState" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#2"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="ControllerState∈SystemState" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="TimerState∈SystemState" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#axm6"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="partition(SystemState,{ControllerState},{SensorState},{TimerState})" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#4"/>
 <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="TMAX∈ℕ" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#6"/>
 <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="TMAX=5" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#7"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="Addresses⊆ℕ" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#cst3"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="ValidAddresses⊆Addresses" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#axm1"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="MaxAddress∈ValidAddresses" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#axm2"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="MaxAddress=100" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#axm4"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="∀x⦂ℤ·x∈ValidAddresses⇔x≤MaxAddress" org.eventb.core.source="/Control/Boiler.buc|org.eventb.core.contextFile#Boiler|org.eventb.core.axiom#axm3"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
