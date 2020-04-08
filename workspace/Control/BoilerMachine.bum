@@ -22,9 +22,9 @@
 <org.eventb.core.variable name="2" org.eventb.core.identifier="boilerOn"/>
 <org.eventb.core.invariant name="3" org.eventb.core.label="inv5" org.eventb.core.predicate="boilerOn ∈ BOOL"/>
 <org.eventb.core.invariant name="4" org.eventb.core.label="inv6" org.eventb.core.predicate="pressure ≤ 65"/>
-<org.eventb.core.invariant name="5" org.eventb.core.label="inv7" org.eventb.core.predicate="¬(pressure &gt; 60 ∧ nextState = SensorState) ∨ heater = off"/>
-<org.eventb.core.invariant name="6" org.eventb.core.label="inv8" org.eventb.core.predicate="¬(pressure &gt; 50 ∧ pressure ≤ 55 ∧ nextState = SensorState) ∨ heater = high"/>
-<org.eventb.core.invariant name="7" org.eventb.core.label="inv9" org.eventb.core.predicate="¬(pressure &gt; 55 ∧ pressure ≤ 60 ∧ nextState = SensorState) ∨ heater = low"/>
+<org.eventb.core.invariant name="5" org.eventb.core.label="inv7" org.eventb.core.predicate="¬(pressure &gt; 60 ∧ (nextState = TimerState ∨ nextState = SensorState)) ∨ heater = off"/>
+<org.eventb.core.invariant name="6" org.eventb.core.label="inv8" org.eventb.core.predicate="¬(pressure &gt; 50 ∧ pressure ≤ 55 ∧ (nextState = TimerState ∨ nextState = SensorState)) ∨ heater = high"/>
+<org.eventb.core.invariant name="7" org.eventb.core.label="inv9" org.eventb.core.predicate="¬(pressure &gt; 55 ∧ pressure ≤ 60 ∧ (nextState = TimerState ∨ nextState = SensorState)) ∨ heater = low"/>
 <org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="controlOff">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="pressure &gt; 60 ∧ nextState = ControllerState"/>
 <org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="delta∈1‥TMAX"/>
