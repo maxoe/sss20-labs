@@ -7,19 +7,18 @@
 <org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="INITIALISATION/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt1/grd2/THM" org.eventb.core.confidence="0" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt1/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt1/inv8/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt1/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt2/grd2/THM" org.eventb.core.confidence="0" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt2/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt2/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt2/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt3/grd2/THM" org.eventb.core.confidence="0" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt3/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt3/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt3/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="evt3/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt1/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="76" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt1/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="76" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt1/inv8/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="76" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt1/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="76" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt2/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="76" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt2/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="76" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt2/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="76" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt2/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="76" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt3/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="75" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt3/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="75" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt3/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="75" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="evt3/inv9/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="75" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="evt4/inv1/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="evt4/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
 <org.eventb.core.psStatus name="evt4/inv6/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
