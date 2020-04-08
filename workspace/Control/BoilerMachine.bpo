@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="76">
+<org.eventb.core.poFile org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="74">
 <org.eventb.core.poIdentifier name="HeaterState" org.eventb.core.type="ℙ(HeaterState)"/>
 <org.eventb.core.poIdentifier name="SystemState" org.eventb.core.type="ℙ(SystemState)"/>
@@ -29,7 +29,7 @@
 <org.eventb.core.poIdentifier name="pressure" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="senTimeStamp" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="51∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#*"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#'"/>
@@ -37,7 +37,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#'"/>
@@ -45,7 +45,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv11/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="INITIALISATION/inv11/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt4"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#'"/>
@@ -53,7 +53,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#INITIALISATION\/inv11\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="51≤65" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#4"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#'"/>
@@ -61,7 +61,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#INITIALISATION\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(51&gt;60∧UpdateHeaterState=UpdatePressureState)∨high=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#5"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#'"/>
@@ -69,7 +69,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#INITIALISATION\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="INITIALISATION/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(51&gt;50∧51≤55∧UpdateHeaterState=UpdatePressureState)∨high=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#'"/>
@@ -77,13 +77,21 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#INITIALISATION\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="INITIALISATION/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="INITIALISATION/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(51&gt;55∧51≤60∧UpdateHeaterState=UpdatePressureState)∨high=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#'"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#INITIALISATION\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamq"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(0&gt;0∧UpdateHeaterState=UpdatePressureState)∨TRUE=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#INITIALISATION\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
 </org.eventb.core.poSequent>
 <org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamq" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="74">
 <org.eventb.core.poIdentifier name="heater'" org.eventb.core.type="HeaterState"/>
@@ -94,15 +102,15 @@
 <org.eventb.core.poIdentifier name="boilerOn'" org.eventb.core.type="BOOL"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamq" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamq" org.eventb.core.poStamp="74"/>
-<org.eventb.core.poSequent name="evt1/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt1/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamr"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="senTimeStamp+delta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="conTimeStamp+delta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#8"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt1\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt1/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt1/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamr"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;60∧UpdatePressureState=UpdatePressureState)∨off=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#5"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#8"/>
@@ -110,7 +118,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt1\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt1/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt1/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamr"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;50∧pressure≤55∧UpdatePressureState=UpdatePressureState)∨off=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#8"/>
@@ -118,7 +126,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt1\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt1/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt1/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamr"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;55∧pressure≤60∧UpdatePressureState=UpdatePressureState)∨off=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#8"/>
@@ -126,25 +134,34 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt1\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamr" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt1/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamr"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(conTimeStamp&gt;conTimeStamp+delta∧UpdatePressureState=UpdatePressureState)∨boilerOn=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#8"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt1\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamr" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="delta" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="heater'" org.eventb.core.type="HeaterState"/>
 <org.eventb.core.poIdentifier name="senTimeStamp'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="nextState'" org.eventb.core.type="SystemState"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamr" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamr" org.eventb.core.poStamp="76">
+<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamr" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamr" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pressure&gt;60∧nextState=UpdateHeaterState" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#8|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="delta∈1 ‥ TMAX" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#8|org.eventb.core.guard#grd1"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="boilerOn=TRUE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#8|org.eventb.core.guard#grd2"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="evt2/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt2/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStams"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="senTimeStamp+delta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="conTimeStamp+delta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#9"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt2\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt2/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt2/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStams"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;60∧UpdatePressureState=UpdatePressureState)∨high=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#5"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#9"/>
@@ -152,7 +169,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt2\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt2/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt2/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStams"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;50∧pressure≤55∧UpdatePressureState=UpdatePressureState)∨high=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#9"/>
@@ -160,7 +177,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt2\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt2/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt2/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStams"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;55∧pressure≤60∧UpdatePressureState=UpdatePressureState)∨high=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#9"/>
@@ -168,25 +185,34 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt2\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStams" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="76">
+<org.eventb.core.poSequent name="evt2/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStams"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(conTimeStamp&gt;conTimeStamp+delta∧UpdatePressureState=UpdatePressureState)∨boilerOn=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#9"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt2\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStams" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="delta" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="heater'" org.eventb.core.type="HeaterState"/>
 <org.eventb.core.poIdentifier name="senTimeStamp'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="nextState'" org.eventb.core.type="SystemState"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStams" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStams" org.eventb.core.poStamp="76">
+<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStams" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStams" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pressure&gt;50∧pressure≤55∧nextState=UpdateHeaterState" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#9|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="delta∈1 ‥ TMAX" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#9|org.eventb.core.guard#grd1"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="boilerOn=TRUE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#9|org.eventb.core.guard#grd2"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="evt3/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="75">
+<org.eventb.core.poSequent name="evt3/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamt"/>
-<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="senTimeStamp+delta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="conTimeStamp+delta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#:"/>
 <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt3\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt3/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="75">
+<org.eventb.core.poSequent name="evt3/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamt"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;60∧UpdatePressureState=UpdatePressureState)∨low=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#5"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#:"/>
@@ -194,7 +220,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt3\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt3/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="75">
+<org.eventb.core.poSequent name="evt3/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamt"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;50∧pressure≤55∧UpdatePressureState=UpdatePressureState)∨low=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#:"/>
@@ -202,7 +228,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt3\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt3/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="75">
+<org.eventb.core.poSequent name="evt3/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamt"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;55∧pressure≤60∧UpdatePressureState=UpdatePressureState)∨low=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#:"/>
@@ -210,17 +236,26 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt3\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamt" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt3/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamt"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(conTimeStamp&gt;conTimeStamp+delta∧UpdatePressureState=UpdatePressureState)∨boilerOn=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#:"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt3\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamt" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="delta" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="heater'" org.eventb.core.type="HeaterState"/>
 <org.eventb.core.poIdentifier name="senTimeStamp'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="nextState'" org.eventb.core.type="SystemState"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamt" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamt" org.eventb.core.poStamp="75">
+<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamt" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamt" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pressure&gt;55∧pressure≤60∧nextState=UpdateHeaterState" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#:|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="delta∈1 ‥ TMAX" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#:|org.eventb.core.guard#grd1"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="boilerOn=TRUE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#:|org.eventb.core.guard#grd2"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="evt4/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt4/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamu"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="pressure+pDelta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#*"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;"/>
@@ -228,7 +263,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt4\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt4/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt4/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamu"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="senTimeStamp+tDelta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;"/>
@@ -236,7 +271,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt4\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt4/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt4/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamu"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="pressure+pDelta≤65" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#4"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;"/>
@@ -244,7 +279,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt4\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt4/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt4/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamu"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure+pDelta&gt;60∧HelperState=UpdatePressureState)∨heater=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#5"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;"/>
@@ -252,7 +287,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt4\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt4/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt4/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamu"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure+pDelta&gt;50∧pressure+pDelta≤55∧HelperState=UpdatePressureState)∨heater=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;"/>
@@ -260,7 +295,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt4\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt4/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt4/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamu"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure+pDelta&gt;55∧pressure+pDelta≤60∧HelperState=UpdatePressureState)∨heater=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;"/>
@@ -268,19 +303,28 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt4\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamu" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt4/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamu"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(conTimeStamp&gt;senTimeStamp+tDelta∧HelperState=UpdatePressureState)∨boilerOn=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt4\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamu" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="senTimeStamp'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="nextState'" org.eventb.core.type="SystemState"/>
 <org.eventb.core.poIdentifier name="tDelta" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="pDelta" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="pressure'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamu" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamu" org.eventb.core.poStamp="74">
+<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamu" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamu" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="nextState=UpdatePressureState∧heater=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pDelta∈0 ‥ 3" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="tDelta∈1 ‥ TMAX" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;|org.eventb.core.guard#1"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="boilerOn=TRUE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#&gt;|org.eventb.core.guard#grd1"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="evt5/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt5/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamv"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="pressure − pDelta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#*"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7"/>
@@ -288,7 +332,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt5\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt5/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt5/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamv"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="senTimeStamp+tDelta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7"/>
@@ -296,7 +340,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt5\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt5/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt5/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamv"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="pressure − pDelta≤65" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#4"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7"/>
@@ -304,7 +348,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt5\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt5/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt5/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamv"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure − pDelta&gt;60∧HelperState=UpdatePressureState)∨heater=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#5"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7"/>
@@ -312,7 +356,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt5\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt5/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt5/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamv"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure − pDelta&gt;50∧pressure − pDelta≤55∧HelperState=UpdatePressureState)∨heater=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7"/>
@@ -320,7 +364,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt5\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt5/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt5/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamv"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure − pDelta&gt;55∧pressure − pDelta≤60∧HelperState=UpdatePressureState)∨heater=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7"/>
@@ -328,19 +372,28 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt5\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamv" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt5/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamv"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(conTimeStamp&gt;senTimeStamp+tDelta∧HelperState=UpdatePressureState)∨boilerOn=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt5\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamv" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="senTimeStamp'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="nextState'" org.eventb.core.type="SystemState"/>
 <org.eventb.core.poIdentifier name="tDelta" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="pDelta" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="pressure'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamv" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamv" org.eventb.core.poStamp="74">
+<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamv" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamv" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="nextState=UpdatePressureState∧heater=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pDelta∈0 ‥ 2" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="tDelta∈1 ‥ TMAX" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7|org.eventb.core.guard#1"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="boilerOn=TRUE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt7|org.eventb.core.guard#grd1"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="evt6/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt6/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamw"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="pressure − pDelta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#*"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8"/>
@@ -348,7 +401,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt6\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt6/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt6/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamw"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="senTimeStamp+tDelta∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8"/>
@@ -356,7 +409,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt6\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt6/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt6/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamw"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="pressure − pDelta≤65" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#4"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8"/>
@@ -364,7 +417,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt6\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt6/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt6/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamw"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure − pDelta&gt;60∧HelperState=UpdatePressureState)∨heater=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#5"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8"/>
@@ -372,7 +425,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt6\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt6/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt6/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamw"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure − pDelta&gt;50∧pressure − pDelta≤55∧HelperState=UpdatePressureState)∨heater=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8"/>
@@ -380,7 +433,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt6\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt6/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt6/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamw"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure − pDelta&gt;55∧pressure − pDelta≤60∧HelperState=UpdatePressureState)∨heater=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8"/>
@@ -388,19 +441,28 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt6\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamw" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt6/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamw"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(conTimeStamp&gt;senTimeStamp+tDelta∧HelperState=UpdatePressureState)∨boilerOn=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt6\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamw" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="senTimeStamp'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="nextState'" org.eventb.core.type="SystemState"/>
 <org.eventb.core.poIdentifier name="tDelta" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="pDelta" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="pressure'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamw" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamw" org.eventb.core.poStamp="74">
+<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamw" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamw" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="nextState=UpdatePressureState∧heater=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="pDelta∈0 ‥ 2" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="tDelta∈1 ‥ TMAX" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8|org.eventb.core.guard#1"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="boilerOn=TRUE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt8|org.eventb.core.guard#grd1"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="evt7/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt7/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamx"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="conTimeStamp∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt5"/>
@@ -408,7 +470,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt7\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt7/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt7/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamx"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;60∧UpdateHeaterState=UpdatePressureState)∨heater=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#5"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt5"/>
@@ -416,7 +478,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt7\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt7/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt7/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamx"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;50∧pressure≤55∧UpdateHeaterState=UpdatePressureState)∨heater=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt5"/>
@@ -424,7 +486,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt7\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt7/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt7/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamx"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;55∧pressure≤60∧UpdateHeaterState=UpdatePressureState)∨heater=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt5"/>
@@ -432,15 +494,24 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt7\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamx" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt7/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamx"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(conTimeStamp&gt;conTimeStamp∧UpdateHeaterState=UpdatePressureState)∨boilerOn=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt5"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt7\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamx" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="senTimeStamp'" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="nextState'" org.eventb.core.type="SystemState"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamx" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamx" org.eventb.core.poStamp="74">
+<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamx" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamx" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="nextState=HelperState" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt5|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="conTimeStamp&gt;senTimeStamp" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt5|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="boilerOn=TRUE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt5|org.eventb.core.guard#grd1"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="evt8/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt8/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamy"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;60∧UpdateHeaterState=UpdatePressureState)∨heater=off" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#5"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt6"/>
@@ -448,7 +519,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt8\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt8/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt8/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamy"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;50∧pressure≤55∧UpdateHeaterState=UpdatePressureState)∨heater=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt6"/>
@@ -456,7 +527,7 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt8\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="evt8/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt8/inv9/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamy"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(pressure&gt;55∧pressure≤60∧UpdateHeaterState=UpdatePressureState)∨heater=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt6"/>
@@ -464,14 +535,39 @@
 <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt8\/inv9\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD8"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamy" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt8/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(conTimeStamp&gt;senTimeStamp∧UpdateHeaterState=UpdatePressureState)∨boilerOn=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt6"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt8\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamy" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poIdentifier name="nextState'" org.eventb.core.type="SystemState"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamy" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamy" org.eventb.core.poStamp="74">
+<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamy" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamy" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="nextState=HelperState" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt6|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="conTimeStamp≤senTimeStamp" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt6|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="boilerOn=TRUE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt6|org.eventb.core.guard#grd1"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="74">
+<org.eventb.core.poSequent name="evt9/inv12/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTALLHYPsenTimeStamz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(conTimeStamp&gt;senTimeStamp∧nextState=UpdatePressureState)∨FALSE=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt9"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poSequent#evt9\/inv12\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD10"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTsenTimeStamz" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="85">
+<org.eventb.core.poIdentifier name="boilerOn'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPsenTimeStamz" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#EVTIDENTsenTimeStamz" org.eventb.core.poStamp="85">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="nextState=UpdatePressureState" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt9|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="senTimeStamp≤conTimeStamp" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt9|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="boilerOn=TRUE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.event#evt9|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Control/BoilerMachine.bpo|org.eventb.core.poFile#BoilerMachine|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="85">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pressure∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#*"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="senTimeStamp∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#+"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="conTimeStamp∈ℕ" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt4"/>
@@ -482,5 +578,6 @@
 <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="¬(pressure&gt;50∧pressure≤55∧nextState=UpdatePressureState)∨heater=high" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#6"/>
 <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="¬(pressure&gt;55∧pressure≤60∧nextState=UpdatePressureState)∨heater=low" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#7"/>
 <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="nextState∈SystemState" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#="/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="(conTimeStamp&gt;senTimeStamp∧nextState=UpdatePressureState)∨boilerOn=FALSE" org.eventb.core.source="/Control/BoilerMachine.bum|org.eventb.core.machineFile#BoilerMachine|org.eventb.core.invariant#evt:"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

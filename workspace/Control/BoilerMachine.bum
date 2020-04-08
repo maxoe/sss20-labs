@@ -26,24 +26,27 @@
 <org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="evt1">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="pressure &gt; 60 ∧ nextState = UpdateHeaterState"/>
 <org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="delta∈1‥TMAX"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="heater≔off" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="act1" org.eventb.core.assignment="senTimeStamp≔ senTimeStamp + delta" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="senTimeStamp≔ conTimeStamp + delta" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="nextState ≔ UpdatePressureState" org.eventb.core.label="act4"/>
 <org.eventb.core.parameter name="-" org.eventb.core.identifier="delta"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="evt2">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="pressure &gt; 50 ∧ pressure ≤ 55 ∧ nextState = UpdateHeaterState"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="heater≔high" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="act1" org.eventb.core.assignment="senTimeStamp≔ senTimeStamp + delta" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="senTimeStamp≔ conTimeStamp + delta" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="nextState ≔ UpdatePressureState" org.eventb.core.label="act4"/>
 <org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="delta∈1‥TMAX"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
 <org.eventb.core.parameter name="element1" org.eventb.core.identifier="delta"/>
 </org.eventb.core.event>
 <org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="evt3">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="pressure &gt; 55 ∧ pressure ≤ 60 ∧ nextState = UpdateHeaterState"/>
 <org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="delta∈1‥TMAX"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="heater≔low" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="act2" org.eventb.core.assignment="senTimeStamp≔ senTimeStamp + delta" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="senTimeStamp≔ conTimeStamp + delta" org.eventb.core.label="act3"/>
 <org.eventb.core.action name="act1" org.eventb.core.assignment="nextState ≔ UpdatePressureState" org.eventb.core.label="act4"/>
 <org.eventb.core.parameter name="act2" org.eventb.core.identifier="delta"/>
 </org.eventb.core.event>
@@ -56,6 +59,7 @@
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="pDelta∈0‥3"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="nextState ≔ HelperState" org.eventb.core.label="act3"/>
 <org.eventb.core.guard name="1" org.eventb.core.label="grd4" org.eventb.core.predicate="tDelta∈1‥TMAX"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="senTimeStamp ≔ senTimeStamp + tDelta " org.eventb.core.label="act4"/>
 <org.eventb.core.parameter name="0" org.eventb.core.identifier="tDelta"/>
 </org.eventb.core.event>
@@ -66,6 +70,7 @@
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="pDelta∈0‥2"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="nextState ≔ HelperState" org.eventb.core.label="act3"/>
 <org.eventb.core.guard name="1" org.eventb.core.label="grd4" org.eventb.core.predicate="tDelta∈1‥TMAX"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="senTimeStamp ≔ senTimeStamp + tDelta " org.eventb.core.label="act4"/>
 <org.eventb.core.parameter name="0" org.eventb.core.identifier="tDelta"/>
 </org.eventb.core.event>
@@ -76,6 +81,7 @@
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="pDelta∈0‥2"/>
 <org.eventb.core.action name="-" org.eventb.core.assignment="nextState ≔ HelperState" org.eventb.core.label="act3"/>
 <org.eventb.core.guard name="1" org.eventb.core.label="grd4" org.eventb.core.predicate="tDelta∈1‥TMAX"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
 <org.eventb.core.action name="/" org.eventb.core.assignment="senTimeStamp ≔ senTimeStamp + tDelta " org.eventb.core.label="act4"/>
 <org.eventb.core.parameter name="0" org.eventb.core.identifier="tDelta"/>
 </org.eventb.core.event>
@@ -83,11 +89,20 @@
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="nextState = HelperState"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="senTimeStamp ≔ conTimeStamp" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="conTimeStamp &gt; senTimeStamp"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="nextState ≔ UpdateHeaterState" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="evt6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="evt8">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="nextState = HelperState"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="conTimeStamp ≤ senTimeStamp"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="nextState ≔ UpdateHeaterState" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
+<org.eventb.core.event name="evt9" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="evt9">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="nextState = UpdatePressureState"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="senTimeStamp ≤ conTimeStamp"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="boilerOn ≔ FALSE" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="evt:" org.eventb.core.label="inv12" org.eventb.core.predicate="(conTimeStamp &gt; senTimeStamp ∧ nextState = UpdatePressureState) ∨ boilerOn = FALSE"/>
 </org.eventb.core.machineFile>
