@@ -4,13 +4,13 @@ VAR
   payment: boolean;
   acc_payment: boolean;
   state:   { ready, expect_payment, dispense_item };
-
+  n_items: 0..2;
 ASSIGN
   init (state) := ready;
   next (state) := case
-		    state = ready          & choice:  expect_payment;
+		    state = ready          & choice		& n_items != 0:  expect_payment;
 		    state = expect_payment & acc_payment: dispense_item;
-		    state = expect_payment & !choice: ready;
+		    state = expect_payment & !payment	& !choice: ready;
 		    state = dispense_item:	      ready;
 		    TRUE:                             state;
   esac;
@@ -18,8 +18,21 @@ ASSIGN
   init (acc_payment) := FALSE;
   next (acc_payment) := (state = expect_payment & payment);
 
+  init (n_items) := 2;
+  next (n_items) := case
+			state = dispense_item & n_items != 0: n_items - 1;
+			TRUE: n_items;
+
+  esac;
+
 DEFINE
   release_item := (state = dispense_item);
 
 LTLSPEC
   G(acc_payment -> F release_item);
+LTLSPEC
+  G(n_items >= 0);
+LTLSPEC
+  G(n_items = 0 -> G state = ready);
+LTLSPEC
+  G(state = dispense_item -> (next(n_items) = n_items - 1))
