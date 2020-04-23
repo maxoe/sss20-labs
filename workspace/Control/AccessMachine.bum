@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="*" org.eventb.core.assignment="manualBoilerOn≔TRUE" org.eventb.core.label="act14"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="Users≔∅" org.eventb.core.label="act11"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="Permissions≔∅" org.eventb.core.label="act12"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="Mode≔AUTOMATIC" org.eventb.core.label="act13"/>
+</org.eventb.core.event>
+<org.eventb.core.refinesMachine name="(" org.eventb.core.target="BoilerMachine"/>
+<org.eventb.core.invariant name="*" org.eventb.core.label="inv1" org.eventb.core.predicate="Users ⊆ USERSET"/>
+<org.eventb.core.variable name="+" org.eventb.core.identifier="Users"/>
+<org.eventb.core.variable name="," org.eventb.core.identifier="Permissions"/>
+<org.eventb.core.invariant name="evt14" org.eventb.core.label="inv13" org.eventb.core.predicate="manualBoilerOn ∈ BOOL"/>
+<org.eventb.core.invariant name="-" org.eventb.core.label="inv2" org.eventb.core.predicate="Permissions ∈ Users → Roles"/>
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="addUser">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="newUser ∈ USERSET"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="newUser"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="newRole"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="newRole ∈ Roles"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="newUser ∉ dom(Permissions)"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="Permissions≔Permissions ∪ {newUser ↦ newRole}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="Users≔Users ∪ {newUser} " org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="newUser ∉ Users"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="controlOffAutomatic">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd4" org.eventb.core.predicate="Mode≠SUPERVISED"/>
+<org.eventb.core.refinesEvent name="(" org.eventb.core.target="controlOff"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd5" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt11" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="manualShutdown">
+<org.eventb.core.guard name="internal1" org.eventb.core.label="grd1" org.eventb.core.predicate="nextState = ControllerState"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd3" org.eventb.core.predicate="boilerOn = TRUE"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="manualBoilerOn≔FALSE" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd4" org.eventb.core.predicate="Mode=SUPERVISED ∨ Mode=MONITORED"/>
+<org.eventb.core.guard name="internal2" org.eventb.core.label="grd5" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="controlHighAutomatic">
+<org.eventb.core.guard name="element2" org.eventb.core.label="grd4" org.eventb.core.predicate="Mode≠SUPERVISED"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd5" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+<org.eventb.core.refinesEvent name="element3" org.eventb.core.target="controlHigh"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt12" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="chernobyl">
+<org.eventb.core.action name="(" org.eventb.core.assignment="heater≔randomHeaterCommand" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="randomHeaterCommand∈HeaterState"/>
+<org.eventb.core.parameter name="element1" org.eventb.core.identifier="randomHeaterCommand"/>
+<org.eventb.core.guard name="element2" org.eventb.core.label="grd4" org.eventb.core.predicate="Mode=SUPERVISED"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd6" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+<org.eventb.core.refinesEvent name="element6" org.eventb.core.target="abstractChernobyl"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="controlLowAutomatic">
+<org.eventb.core.refinesEvent name="grd3" org.eventb.core.target="controlLow"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd4" org.eventb.core.predicate="Mode≠SUPERVISED"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd5" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="sensorHigh">
+<org.eventb.core.refinesEvent name="grd6" org.eventb.core.target="sensorHigh"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd6" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="sensorLow">
+<org.eventb.core.refinesEvent name="element2" org.eventb.core.target="sensorLow"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd6" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="sensorOff">
+<org.eventb.core.refinesEvent name="element2" org.eventb.core.target="sensorOff"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd6" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="sensorTHigher">
+<org.eventb.core.refinesEvent name="internal2" org.eventb.core.target="sensorTHigher"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd5" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="controlTHigher">
+<org.eventb.core.refinesEvent name="grd2" org.eventb.core.target="controlTHigher"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd5" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ShutdownAutomatic">
+<org.eventb.core.refinesEvent name="+" org.eventb.core.target="Shutdown"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd4" org.eventb.core.predicate="Mode=AUTOMATIC"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd5" org.eventb.core.predicate="manualBoilerOn = TRUE"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="/" org.eventb.core.identifier="Mode"/>
+<org.eventb.core.variable name="var1" org.eventb.core.identifier="pressure"/>
+<org.eventb.core.variable name="var2" org.eventb.core.identifier="senTimeStamp"/>
+<org.eventb.core.variable name="var3" org.eventb.core.identifier="conTimeStamp"/>
+<org.eventb.core.variable name="var4" org.eventb.core.identifier="heater"/>
+<org.eventb.core.variable name="var5" org.eventb.core.identifier="boilerOn"/>
+<org.eventb.core.variable name="var6" org.eventb.core.identifier="nextState"/>
+<org.eventb.core.variable name="var7" org.eventb.core.identifier="Address"/>
+<org.eventb.core.invariant name="0" org.eventb.core.label="inv3" org.eventb.core.predicate="Mode ∈ Modes"/>
+<org.eventb.core.invariant name="inv1" org.eventb.core.label="inv7" org.eventb.core.predicate="¬(pressure &gt; 60 ∧ (nextState = TimerState ∨ nextState = SensorState)) ∨ heater = off ∨ Mode=SUPERVISED"/>
+<org.eventb.core.invariant name="inv2" org.eventb.core.label="inv8" org.eventb.core.predicate="¬(pressure &gt; 50 ∧ pressure ≤ 55 ∧ (nextState = TimerState ∨ nextState = SensorState)) ∨ heater = high ∨ Mode=SUPERVISED"/>
+<org.eventb.core.invariant name="inv3" org.eventb.core.label="inv9" org.eventb.core.predicate="¬(pressure &gt; 55 ∧ pressure ≤ 60 ∧ (nextState = TimerState ∨ nextState = SensorState)) ∨ heater = low ∨ Mode=SUPERVISED"/>
+<org.eventb.core.invariant name="inv4" org.eventb.core.label="inv12" org.eventb.core.predicate="¬(conTimeStamp &lt; senTimeStamp ∧ nextState = SensorState) ∨ boilerOn = FALSE ∨ manualBoilerOn = FALSE"/>
+<org.eventb.core.seesContext name="evt3" org.eventb.core.target="Access"/>
+<org.eventb.core.event name="var8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="switchModeSupervisor">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="{actingUser ↦ Supervisor} ⊆ Permissions"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="actingUser"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="Mode≔newMode" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="*" org.eventb.core.identifier="newMode"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="newMode ∈ Modes"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="newMode ≠ Mode"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt10" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="switchModeOperator">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="{actingUser ↦ Operator} ⊆ Permissions"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="actingUser"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="Mode≔newMode" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="*" org.eventb.core.identifier="newMode"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="newMode ∈ Modes"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="newMode ≠ Mode"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="Mode ≠ SUPERVISED"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="newMode ≠ SUPERVISED"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evt13" org.eventb.core.identifier="manualBoilerOn"/>
+</org.eventb.core.machineFile>
