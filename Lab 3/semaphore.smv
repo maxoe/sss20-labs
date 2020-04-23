@@ -38,3 +38,23 @@ SPEC AG !(proc1.state = critical & proc2.state = critical); -- safety
 
 SPEC AG (proc1.state = entering -> AF proc1.state = critical); -- liveness
 SPEC AG (proc2.state = entering -> AF proc2.state = critical); -- liveness
+
+-- FAILED TRACE WITHOUT FAIRNESS ENABLED
+-- Trace Description: CTL Counterexample 
+-- Trace Type: Counterexample 
+--   -> State: 2.1 <-
+--     semaphore = FALSE
+--     running = 0
+--     proc1.state = idle
+--     proc2.state = idle
+--     empty = TRUE
+--   -> State: 2.2 <-
+--     running = 1
+--     proc2.state = entering
+--     empty = FALSE
+--   -- Loop starts here
+--   -> State: 2.3 <-
+--     running = 0
+--   -> State: 2.4 <-
+
+-- Problem: Process 1 (proc2) is in entry section but never enters critical section because it never runs anymore
