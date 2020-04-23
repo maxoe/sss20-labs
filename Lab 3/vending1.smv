@@ -4,13 +4,13 @@ VAR
   payment: boolean;
   acc_payment: boolean;
   state:   { ready, expect_payment, dispense_item };
-  n_items: 0..2;
+  n_items: 0..2; -- arbitrary number, we chose 2 for shorter stack traces
 ASSIGN
   init (state) := ready;
   next (state) := case
 		    state = ready          & choice		& n_items != 0:  expect_payment;
 		    state = expect_payment & acc_payment: dispense_item;
-		    state = expect_payment & !payment	& !choice: ready;
+		    state = expect_payment & !payment	& !choice: ready; -- only go back if payment is not made yet
 		    state = dispense_item:	      ready;
 		    TRUE:                             state;
   esac;
@@ -20,7 +20,7 @@ ASSIGN
 
   init (n_items) := 2;
   next (n_items) := case
-			state = dispense_item & n_items != 0: n_items - 1;
+			state = dispense_item & n_items != 0: n_items - 1; -- if item dispensed, decrease counter
 			TRUE: n_items;
 
   esac;
@@ -33,6 +33,6 @@ LTLSPEC
 LTLSPEC
   G(n_items >= 0);
 LTLSPEC
-  G(n_items = 0 -> G state = ready);
+  G(n_items = 0 -> G state = ready); -- no items left leads to the machine ignoring every input
 LTLSPEC
-  G(state = dispense_item -> (next(n_items) = n_items - 1))
+  G(state = dispense_item -> (next(n_items) = n_items - 1)) -- n_items decreased after dispense_item step
