@@ -1,31 +1,40 @@
-MODULE user(semaphore)
+MODULE user(semaphore, active)
 VAR
   state : { idle, entering, critical, exiting };
 ASSIGN
   init(state) := idle;
   next(state) := case
-    state = idle : { idle, entering };
-    state = entering & !semaphore : critical;
-    state = critical : { critical, exiting };
-    state = exiting : idle;
+    active & state = idle : { idle, entering };
+    active & state = entering & !semaphore : critical;
+    active & state = critical : { critical, exiting };
+    active & state = exiting : idle;
     TRUE : state;
   esac;
-  next(semaphore) := case
-    state = entering: TRUE;
-    state = exiting : FALSE;
-    TRUE : semaphore;
-  esac;
-FAIRNESS
-  running
 
 MODULE main
 VAR
   semaphore : boolean;
-  proc1 : process user(semaphore);
-  proc2 : process user(semaphore);
+  VAR running: 0..1;
+  proc1 : user(semaphore, next(running) = 0);
+  proc2 : user(semaphore, next(running) = 1);
 ASSIGN
   init(semaphore) := FALSE;
+
+  next(semaphore) := case
+    next(running) = 0 & !semaphore & proc1.state = entering: TRUE;
+	next(running) = 1 & !semaphore & proc2.state = entering: TRUE;
+    next(running) = 0 & semaphore & proc1.state = exiting : FALSE;
+	next(running) = 1 & semaphore & proc2.state = exiting : FALSE;
+    TRUE : semaphore;
+  esac;
+
+DEFINE
+	empty := proc1.state != entering & proc2.state != entering;
+
+FAIRNESS
+  empty;
 
 SPEC AG !(proc1.state = critical & proc2.state = critical); -- safety
 
 SPEC AG (proc1.state = entering -> AF proc1.state = critical); -- liveness
+SPEC AG (proc2.state = entering -> AF proc2.state = critical); -- liveness
