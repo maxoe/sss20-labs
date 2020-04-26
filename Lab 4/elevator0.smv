@@ -29,8 +29,9 @@ MODULE Button(reset)
       esac;
 
   -- REQ: The controller must not reset a button that is not pressed.
-
-
+  SPEC AG(pressed | !reset)
+  -- REQ: No button can reach a state where it remains pressed forever.
+  SPEC AG(pressed -> AF(!pressed))
 
 ---------------------------------------------------------------------------
 -- CABIN                                                                 --
@@ -56,15 +57,18 @@ MODULE Cabin(direction)
           TRUE:floor;
                                  esac;
         next(direction) = down : case
-				  floor = 3:2;
+		  floor = 3:2;
           floor = 2:1;
           TRUE:floor;
                                  esac;
       esac;
 
   -- REQ: The cabin can move up only if the floor is not N.
+  SPEC AG(floor = N -> AX(direction != up))
 
-  -- REQ: The cabin can move down only if the floor is not 1.
+-- REQ: The cabin can move down only if the floor is not 1.
+  SPEC AG(floor = 1 -> AX(direction != down))
+
 
 
 
@@ -90,8 +94,10 @@ MODULE Door(door_cmd)
       esac;
 
   -- REQ: The controller can issue an open command only if the door is closed.
+  SPEC AG(status = close -> AX(door_cmd != close))
 
   -- REQ: The controller can issue a close command only if the door is open.
+  SPEC AG(status = open -> AX(door_cmd != open))
 
 
 
@@ -138,10 +144,11 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3)
   --   door is open, close it.
   -- * Otherwise, do not send commands to the door.
   ASSIGN
-    door_cmd :=
+	next(door_cmd) :=
       case
       pending_here & door = closed: open;
-      TRUE: close;
+	  (pending_up | pending_down) & door = open: close;
+      TRUE: nop;
       esac;
 
   -- Variable "last_dir" records the last movement direction of the cabin.
@@ -166,8 +173,8 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3)
     init(direction) := stop;
     next(direction) :=
       case
-      pending_up & !pending_here&(last_dir = up|last_dir = stop): up;
-      pending_down & !pending_here&(last_dir = down|last_dir = stop): down;
+	  next(door) = closed & pending_up & (!pending_here | direction = stop) & direction != down & (!pending_down | last_dir = up): up;
+      next(door) = closed & pending_down & (!pending_here | direction = stop) & direction != up & (!pending_up | last_dir = down): down;
       pending_here: stop;
       TRUE: stop;
       esac;
@@ -175,6 +182,25 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3)
   -- The cabin needs to stop before it can change direction.
   SPEC AG(direction = up -> AX(direction != down))
   SPEC AG(direction = down -> AX(direction != up))
+
+  -- REQ: No pressed button can be reset until the cabin stops at the
+  --      corresponding floor and opens the door.
+  SPEC AG((pressed_1 & AX !pressed_1) -> door = open & floor = 1)
+  SPEC AG((pressed_2 & AX !pressed_2) -> door = open & floor = 2)
+  SPEC AG((pressed_3 & AX !pressed_3) -> door = open & floor = 3)
+
+  -- REQ: A button must be reset as soon as the cabin stops at the
+  --      corresponding floor with the door open.
+  SPEC AG(door = open & floor = 1 & pressed_1 -> AX(!pressed_1))
+  SPEC AG(door = open & floor = 2 & pressed_2 -> AX(!pressed_2))
+  SPEC AG(door = open & floor = 3 & pressed_3 -> AX(!pressed_3))
+
+  -- REQ: The cabin can move only when the door is closed.
+  SPEC AG(door = open -> direction = stop)
+
+  -- REQ: If no button is pressed, the controller must issue no commands
+  --      and the cabin must be stopped.
+  SPEC AG(!pressed_1 & !pressed_2 & !pressed_3 -> direction = stop)
 
 ---------------------------------------------------------------------------
 -- MAIN                                                                  --
@@ -199,19 +225,7 @@ MODULE main
 -- REQUIREMENTS                                                          --
 ---------------------------------------------------------------------------
 
-  -- The controller must satisfy the following requirements.
+  -- The controller must satisfy the following requirements.  
 
-  -- REQ: No button can reach a state where it remains pressed forever.
-
-  -- REQ: No pressed button can be reset until the cabin stops at the
-  --      corresponding floor and opens the door.
-
-  -- REQ: A button must be reset as soon as the cabin stops at the
-  --      corresponding floor with the door open.
-
-  -- REQ: The cabin can move only when the door is closed.
-
-  -- REQ: If no button is pressed, the controller must issue no commands
-  --      and the cabin must be stopped.
 
 ---------------------------------------------------------------------------
