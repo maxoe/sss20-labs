@@ -241,7 +241,7 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
   SPEC AG((!access_3 -> AX(!served_3)) | earthquake)
 
   -- REQ: If earthquake stop and open door at the next floor
-  SPEC AG(earthquake -> AX(direction = stop))
+  SPEC AG(earthquake -> A[AX(direction = stop) U (!earthquake & !repair)])
 
   -- REQ: If earthquake open door in small number of transitions
   LTLSPEC G(earthquake -> F[1,3](door = open))
