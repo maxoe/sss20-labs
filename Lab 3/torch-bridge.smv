@@ -1,0 +1,119 @@
+MODULE main
+VAR
+  location : array 0..3 of boolean; -- true is right side
+  traveling: array 0..3 of boolean; -- true if right side
+  duration: array 0..3 of 1..10;
+  torch: boolean;
+  torchTraveling: boolean;
+  time: 0..100;
+  carrier: 0..3;
+
+ASSIGN
+  init (location[0]) := FALSE;
+  init (location[1]) := FALSE;
+  init (location[2]) := FALSE;
+  init (location[3]) := FALSE;
+  init (traveling[0]) := FALSE;
+  init (traveling[1]) := FALSE;
+  init (traveling[2]) := FALSE;
+  init (traveling[3]) := FALSE;
+  init (torchTraveling) := FALSE;
+  init (torch) := FALSE;
+  init (time) := 0;
+
+  init (duration[0]) := 1;
+  init (duration[1]) := 2;
+  init (duration[2]) := 5;
+  init (duration[3]) := 10;
+
+  next (duration[0]) := duration[0];
+  next (duration[1]) := duration[1];
+  next (duration[2]) := duration[2];
+  next (duration[3]) := duration[3];
+
+  next (torch) := case
+  torchTraveling: !torch;
+	TRUE: torch;
+  esac;
+
+  next (location[0]) := case
+    -- rule: location changes if "0" is traveling
+	traveling[0] & torchTraveling: !location[0];
+	TRUE: location[0];
+  esac;
+
+  next (location[1]) := case
+    -- copy rule from above and change index
+	traveling[1] & torchTraveling: !location[1];
+	TRUE: location[1];
+  esac;
+
+  next (location[2]) := case
+  traveling[2] & torchTraveling: !location[2];
+	TRUE: location[2];
+  esac;
+
+  next (location[3]) := case
+  traveling[3] & torchTraveling: !location[3];
+	TRUE: location[3];
+  esac;
+
+  next (traveling[0]) := case
+    location[0] = torch & !torchTraveling: TRUE;
+	TRUE : FALSE;
+  esac;
+
+  next (traveling[1]) := case
+    location[1] = torch & !torchTraveling: {TRUE, FALSE};
+	TRUE : FALSE;
+  esac;
+
+  next (traveling[2]) := case
+    location[2] = torch & !torchTraveling: {TRUE, FALSE};
+	TRUE : FALSE;
+  esac;
+
+  next (traveling[3]) := case
+    location[3] = torch & !torchTraveling: {TRUE, FALSE};
+	TRUE : FALSE;
+  esac;
+
+  next (torchTraveling) := case
+    !torchTraveling & (traveling[0] | traveling[1] | traveling[2] | traveling[3]): TRUE;
+    torchTraveling : !torchTraveling;
+	TRUE: FALSE;
+  esac;
+
+
+  next(time) := case
+    time > 90: 90;
+	torchTraveling & traveling[3]: time + 10;
+	torchTraveling & !traveling[3] & traveling[2]: time + 5;
+	torchTraveling & !traveling[3] & !traveling[2] & traveling[1]: time + 2;
+	torchTraveling & !traveling[3] & !traveling[2] & !traveling[1] & traveling[0]: time + 1;
+	TRUE: time;
+  esac;
+
+--   next(carrier) := case 
+--   	{0, 1, 2, 3};
+
+LTLSPEC
+  !( G (next(traveling[0]) -> location[0] = torch)
+  		& G (next(traveling[1]) -> location[1] = torch)
+		& G (next(traveling[2]) -> location[2] = torch)
+		& G (next(traveling[3]) -> location[3] = torch)
+
+		& G traveling[0] -> next(location[0]) != location[0]
+		& G traveling[1] -> next(location[1]) != location[1]
+		& G traveling[2] -> next(location[2]) != location[2]
+		& G traveling[3] -> next(location[3]) != location[3]
+
+		& G ((count(traveling[0], traveling[1], traveling[2], traveling[3]) > 0
+			& count(next(traveling[0]), next(traveling[1]), next(traveling[2]), next(traveling[3])) = 0)) -> torch != next(torch)
+
+		& G (count(traveling[0], traveling[1], traveling[2], traveling[3]) <=2)
+
+		& G count(traveling[0], traveling[1], traveling[2], traveling[3], torch) != 1 -- torch cannot travel alone
+		  
+     U (location[0] & location[1] & location[2] & location[3] &
+        time <= 20));
