@@ -51,10 +51,14 @@ MODULE Cabin(direction)
       case
         next(direction) = stop : floor;
         next(direction) = up   : case
-				   ???
+          floor = 1:2;
+          floor = 2:3;
+          TRUE:floor;
                                  esac;
         next(direction) = down : case
-				   ???
+				  floor = 3:2;
+          floor = 2:1;
+          TRUE:floor;
                                  esac;
       esac;
 
@@ -136,7 +140,8 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3)
   ASSIGN
     door_cmd :=
       case
-	???
+      pending_here & door = closed: open;
+      TRUE: close;
       esac;
 
   -- Variable "last_dir" records the last movement direction of the cabin.
@@ -161,7 +166,10 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3)
     init(direction) := stop;
     next(direction) :=
       case
-	???
+      pending_up & !pending_here&(last_dir = up|last_dir = stop): up;
+      pending_down & !pending_here&(last_dir = down|last_dir = stop): down;
+      pending_here: stop;
+      TRUE: stop;
       esac;
 
   -- The cabin needs to stop before it can change direction.
