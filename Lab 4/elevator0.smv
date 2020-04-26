@@ -16,7 +16,7 @@
 -- controller. A button that is not pressed can become pressed
 -- nondeterministically.
 
-MODULE Button(reset)
+MODULE Button(reset, earthquake)
   VAR
     pressed : boolean;
 	access : boolean;
@@ -26,7 +26,7 @@ MODULE Button(reset)
       case
         pressed & reset  : FALSE;
         pressed & !reset : TRUE;
-        access & !pressed         : {FALSE,TRUE};
+        !earthquake & access & !pressed         : {FALSE,TRUE};
 		TRUE: pressed;
       esac;
 	
@@ -39,6 +39,9 @@ MODULE Button(reset)
 
   -- REQ: access property does not change over time
   SPEC AG(access -> AX(access) & !access -> AX(!access))
+
+  -- REQ: I earthquake ignore pressed buttons
+  SPEC AG(earthquake & !pressed -> AX(!pressed))
 
 ---------------------------------------------------------------------------
 -- CABIN                                                                 --
@@ -127,13 +130,15 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
 	served_1 : boolean;
 	served_2 : boolean;
 	served_3 : boolean;
+	earthquake : boolean;
+	repair : boolean;
 
   -- Button N is reset only if it is pressed, we are at floor N, and
   -- the door is open.
   ASSIGN
-    reset_1 := (pressed_1 & floor = 1 & door = open);
-    reset_2 := (pressed_2 & floor = 2 & door = open);
-    reset_3 := (pressed_3 & floor = 3 & door = open);
+    reset_1 := (pressed_1 & (floor = 1 & door = open | earthquake));
+    reset_2 := (pressed_2 & (floor = 2 & door = open | earthquake));
+    reset_3 := (pressed_3 & (floor = 3 & door = open | earthquake));
 
 	served_1 := (floor = 1 & door_cmd = open);
 	served_2 := (floor = 2 & door_cmd = open);
@@ -161,7 +166,8 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
 	next(door_cmd) :=
       case
       pending_here & door = closed & next(direction) = stop: open;
-	  (pending_up | pending_down) & door = open: close;
+	  earthquake & next(direction) = stop & door != open: open;
+	  !earthquake & (pending_up | pending_down) & door = open & !repair: close;
       TRUE: nop;
       esac;
 
@@ -187,11 +193,23 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
     init(direction) := stop;
     next(direction) :=
       case
-	  next(door) = closed & pending_up & (!pending_here | direction = stop) & direction != down & (!pending_down | last_dir = up): up;
-      next(door) = closed & pending_down & (!pending_here | direction = stop) & direction != up & (!pending_up | last_dir = down): down;
-      pending_here: stop;
+	  !earthquake & next(door) = closed & pending_up & (!pending_here | direction = stop) & direction != down & (!pending_down | last_dir = up): up;
+      !earthquake & next(door) = closed & pending_down & (!pending_here | direction = stop) & direction != up & (!pending_up | last_dir = down): down;
       TRUE: stop;
       esac;
+	
+	next(earthquake) := case
+	  earthquake & !repair: TRUE;
+	  earthquake & repair: FALSE;
+	  TRUE: {TRUE, FALSE};
+	  esac;
+	
+	init(repair) := FALSE;
+	next(repair) := case
+	  !repair & earthquake & door_cmd != close & door = open: TRUE;
+	  TRUE: FALSE;
+	  esac;
+	  
 
   -- The cabin needs to stop before it can change direction.
   SPEC AG(direction = up -> AX(direction != down))
@@ -199,9 +217,9 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
 
   -- REQ: No pressed button can be reset until the cabin stops at the
   --      corresponding floor and opens the door.
-  SPEC AG((pressed_1 & AX !pressed_1) -> door = open & floor = 1)
-  SPEC AG((pressed_2 & AX !pressed_2) -> door = open & floor = 2)
-  SPEC AG((pressed_3 & AX !pressed_3) -> door = open & floor = 3)
+  SPEC AG((pressed_1 & AX !pressed_1) -> (door = open & floor = 1) | earthquake)
+  SPEC AG((pressed_2 & AX !pressed_2) -> (door = open & floor = 2) | earthquake)
+  SPEC AG((pressed_3 & AX !pressed_3) -> (door = open & floor = 3) | earthquake)
 
   -- REQ: A button must be reset as soon as the cabin stops at the
   --      corresponding floor with the door open.
@@ -217,9 +235,25 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
   SPEC AG(!pressed_1 & !pressed_2 & !pressed_3 -> direction = stop)
 
   -- REQ: Each floor is only served if access is enabled, or if the elevator happens to start at that floor.
-  SPEC AG(!access_1 -> AX(!served_1))
-  SPEC AG(!access_2 -> AX(!served_2))
-  SPEC AG(!access_3 -> AX(!served_3))
+  -- Exception: earthquake
+  SPEC AG((!access_1 -> AX(!served_1)) | earthquake)
+  SPEC AG((!access_2 -> AX(!served_2)) | earthquake)
+  SPEC AG((!access_3 -> AX(!served_3)) | earthquake)
+
+  -- REQ: If earthquake stop and open door at the next floor
+  SPEC AG(earthquake -> AX(direction = stop))
+
+  -- REQ: If earthquake open door in small number of transitions
+  LTLSPEC G(earthquake -> F[1,3](door = open))
+
+  -- REQ: If earthquake and door opened, door stays opened until repaired
+  SPEC AG(earthquake & door_cmd = open -> A[AX(door = open) U (!earthquake & !repair)])
+
+  -- REQ: If earthquake, earthquake stays until repair
+  SPEC AG(earthquake -> A[earthquake U repair])
+
+  -- REQ: If earthquake, repair will eventually arrive
+  SPEC AG(earthquake -> AF(repair))
 
 ---------------------------------------------------------------------------
 -- MAIN                                                                  --
@@ -231,9 +265,9 @@ MODULE main
   VAR
     cabin : Cabin(ctrl.direction);
     door  : Door(ctrl.door_cmd);
-    button_1 : Button(ctrl.reset_1);
-    button_2 : Button(ctrl.reset_2);
-    button_3 : Button(ctrl.reset_3);
+    button_1 : Button(ctrl.reset_1, ctrl.earthquake);
+    button_2 : Button(ctrl.reset_2, ctrl.earthquake);
+    button_3 : Button(ctrl.reset_3, ctrl.earthquake);
     ctrl : CTRL(cabin.floor, door.status,
                 button_1.pressed, button_2.pressed,
                 button_3.pressed, button_1.access,
