@@ -19,19 +19,26 @@
 MODULE Button(reset)
   VAR
     pressed : boolean;
+	access : boolean;
   ASSIGN
     init(pressed) := FALSE;
     next(pressed) :=
       case
         pressed & reset  : FALSE;
         pressed & !reset : TRUE;
-        !pressed         : {FALSE,TRUE};
+        access & !pressed         : {FALSE,TRUE};
+		TRUE: pressed;
       esac;
+	
+	next(access) := access;
 
   -- REQ: The controller must not reset a button that is not pressed.
   SPEC AG(pressed | !reset)
   -- REQ: No button can reach a state where it remains pressed forever.
   SPEC AG(pressed -> AF(!pressed))
+
+  -- REQ: access property does not change over time
+  SPEC AG(access -> AX(access) & !access -> AX(!access))
 
 ---------------------------------------------------------------------------
 -- CABIN                                                                 --
@@ -110,13 +117,16 @@ MODULE Door(door_cmd)
 -- status of the four buttons. It decides the controls to the engine, to
 -- the door and to the buttons.
 
-MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3)
+MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, access_3)
   VAR
     direction : {up, down, stop};
     door_cmd : {open, close, nop};
     reset_1 : boolean;
     reset_2 : boolean;
     reset_3 : boolean;
+	served_1 : boolean;
+	served_2 : boolean;
+	served_3 : boolean;
 
   -- Button N is reset only if it is pressed, we are at floor N, and
   -- the door is open.
@@ -124,6 +134,10 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3)
     reset_1 := (pressed_1 & floor = 1 & door = open);
     reset_2 := (pressed_2 & floor = 2 & door = open);
     reset_3 := (pressed_3 & floor = 3 & door = open);
+
+	served_1 := (floor = 1 & door_cmd = open);
+	served_2 := (floor = 2 & door_cmd = open);
+	served_3 := (floor = 3 & door_cmd = open);
 
   -- Check whether there are pending requests at the current floor,
   -- at a higher floor, and at a lower floor.
@@ -146,7 +160,7 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3)
   ASSIGN
 	next(door_cmd) :=
       case
-      pending_here & door = closed: open;
+      pending_here & door = closed & next(direction) = stop: open;
 	  (pending_up | pending_down) & door = open: close;
       TRUE: nop;
       esac;
@@ -202,6 +216,11 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3)
   --      and the cabin must be stopped.
   SPEC AG(!pressed_1 & !pressed_2 & !pressed_3 -> direction = stop)
 
+  -- REQ: Each floor is only served if access is enabled, or if the elevator happens to start at that floor.
+  SPEC AG(!access_1 -> AX(!served_1))
+  SPEC AG(!access_2 -> AX(!served_2))
+  SPEC AG(!access_3 -> AX(!served_3))
+
 ---------------------------------------------------------------------------
 -- MAIN                                                                  --
 ---------------------------------------------------------------------------
@@ -217,7 +236,8 @@ MODULE main
     button_3 : Button(ctrl.reset_3);
     ctrl : CTRL(cabin.floor, door.status,
                 button_1.pressed, button_2.pressed,
-                button_3.pressed);
+                button_3.pressed, button_1.access,
+				button_2.access, button_3.access);
 
 
 
