@@ -280,6 +280,10 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
   -- REQ: If earthquake, repair will eventually arrive
   SPEC AG(earthquake -> AF(repair))
 
+  -- REQ Special reset requirements for directional buttons
+  SPEC AG(reset_2_down -> last_dir = down | !pending_up | earthquake)
+  SPEC AG(reset_2_up -> last_dir = up | !pending_down | earthquake)
+
 ---------------------------------------------------------------------------
 -- MAIN                                                                  --
 ---------------------------------------------------------------------------
@@ -314,4 +318,131 @@ ASSIGN
   SPEC AG(button_2.access = button_2_down.access & button_2.access = button_2_up.access)
 
 
-  -- COUNTEREXAMPE FOR INCORRECT PROPERTY
+-- COUNTEREXAMPE FOR INCORRECT MODEL
+-- CHANGE in first case of next(door_cmd)
+  -- open if request shall be fulfilled and door closed and cabin does not move
+  --   (pending_here | pending_here_dir) & door = closed & next(direction) = stop: open;
+-- TO
+  --   (pending_here | pending_here_dir) & next(direction) = stop: open;
+
+
+-- specification AG (pressed -> AF !pressed) IN button_1 is false
+-- as demonstrated by the following execution sequence
+-- Trace Description: CTL Counterexample
+-- Trace Type: Counterexample 
+--   -> State: 2.1 <-
+--     cabin.floor = 2
+--     door.status = open
+--     button_1.pressed = FALSE
+--     button_2.pressed = FALSE
+--     button_2_up.pressed = FALSE
+--     button_2_down.pressed = FALSE
+--     button_3.pressed = FALSE
+--     ctrl.direction = stop
+--     ctrl.door_cmd = close
+--     ctrl.reset_1 = FALSE
+--     ctrl.reset_2 = FALSE
+--     ctrl.reset_2_up = FALSE
+--     ctrl.reset_2_down = FALSE
+--     ctrl.reset_3 = FALSE
+--     ctrl.served_1 = FALSE
+--     ctrl.served_2 = FALSE
+--     ctrl.served_3 = FALSE
+--     ctrl.earthquake = FALSE
+--     ctrl.repair = FALSE
+--     ctrl.last_dir = up
+--     floor1_access = TRUE
+--     floor2_access = TRUE
+--     floor3_access = FALSE
+--     cabin.N = 3
+--     ctrl.pending_down = FALSE
+--     ctrl.pending_up = FALSE
+--     ctrl.pending_here_dir = FALSE
+--     ctrl.pending_here = FALSE
+--   -> State: 2.2 <-
+--     door.status = closed
+--     button_2.pressed = TRUE
+--     ctrl.door_cmd = nop
+--     ctrl.pending_here = TRUE
+--   -> State: 2.3 <-
+--     button_1.pressed = TRUE
+--     ctrl.door_cmd = open
+--     ctrl.served_2 = TRUE
+--     ctrl.pending_down = TRUE
+--   -- Loop starts here
+--   -> State: 2.4 <-
+--     door.status = open
+--     button_2_up.pressed = TRUE
+--     ctrl.reset_2 = TRUE
+--     ctrl.reset_2_up = TRUE
+--   -> State: 2.5 <-
+--     button_2.pressed = FALSE
+--     button_2_up.pressed = FALSE
+--     button_2_down.pressed = TRUE
+--     ctrl.reset_2 = FALSE
+--     ctrl.reset_2_up = FALSE
+--     ctrl.reset_2_down = TRUE
+--     ctrl.pending_here_dir = TRUE
+--     ctrl.pending_here = FALSE
+--   -> State: 2.6 <-
+--     button_2.pressed = TRUE
+--     button_2_up.pressed = TRUE
+--     button_2_down.pressed = FALSE
+--     ctrl.reset_2 = TRUE
+--     ctrl.reset_2_up = TRUE
+--     ctrl.reset_2_down = FALSE
+--     ctrl.pending_here_dir = FALSE
+--     ctrl.pending_here = TRUE
+
+-- door_cmd set to open in state 2.3, remains like this forever so the door never closes. Buttons are pressed and reset in a loop
+-- in a way that (pending_here | pending_here_dir) is true all the time
+
+
+
+-- COUNTEREXMAPLE FOR INCORRECT PROPERTY
+-- CHANGE
+  -- LTLSPEC G(earthquake -> F[1,3](door = open))
+-- TO
+  -- SPEC AG(earthquake -> AX(door = open))
+
+-- specification AG (earthquake -> AX door = open) IN ctrl is false
+-- as demonstrated by the following execution sequence
+-- Trace Description: CTL Counterexample
+-- Trace Type: Counterexample
+--   -> State: 1.1 <-
+--     cabin.floor = 2
+--     door.status = closed
+--     button_1.pressed = FALSE
+--     button_2.pressed = FALSE
+--     button_2_up.pressed = FALSE
+--     button_2_down.pressed = FALSE
+--     button_3.pressed = FALSE
+--     ctrl.direction = stop
+--     ctrl.door_cmd = close
+--     ctrl.reset_1 = FALSE
+--     ctrl.reset_2 = FALSE
+--     ctrl.reset_2_up = FALSE
+--     ctrl.reset_2_down = FALSE
+--     ctrl.reset_3 = FALSE
+--     ctrl.served_1 = FALSE
+--     ctrl.served_2 = FALSE
+--     ctrl.served_3 = FALSE
+--     ctrl.earthquake = FALSE
+--     ctrl.repair = FALSE
+--     ctrl.last_dir = up
+--     floor1_access = FALSE
+--     floor2_access = FALSE
+--     floor3_access = FALSE
+--     cabin.N = 3
+--     ctrl.pending_down = FALSE
+--     ctrl.pending_up = FALSE
+--     ctrl.pending_here_dir = FALSE
+--     ctrl.pending_here = FALSE
+--   -> State: 1.2 <-
+--     ctrl.door_cmd = nop
+--     ctrl.earthquake = TRUE
+--   -> State: 1.3 <-
+--     ctrl.door_cmd = open
+--     ctrl.served_2 = TRUE
+
+-- Door needs more than one step to open
