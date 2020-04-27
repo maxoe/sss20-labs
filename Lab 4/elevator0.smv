@@ -16,10 +16,9 @@
 -- controller. A button that is not pressed can become pressed
 -- nondeterministically.
 
-MODULE Button(reset, earthquake)
+MODULE Button(reset, earthquake, access)
   VAR
     pressed : boolean;
-	access : boolean;
   ASSIGN
     init(pressed) := FALSE;
     next(pressed) :=
@@ -29,8 +28,6 @@ MODULE Button(reset, earthquake)
         !earthquake & access & !pressed         : {FALSE,TRUE};
 		TRUE: pressed;
       esac;
-	
-	next(access) := access;
 
   -- REQ: The controller must not reset a button that is not pressed.
   SPEC AG(pressed | !reset)
@@ -120,12 +117,14 @@ MODULE Door(door_cmd)
 -- status of the four buttons. It decides the controls to the engine, to
 -- the door and to the buttons.
 
-MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, access_3)
+MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, access_3, pressed_2_up, pressed_2_down)
   VAR
     direction : {up, down, stop};
     door_cmd : {open, close, nop};
     reset_1 : boolean;
     reset_2 : boolean;
+	reset_2_up : boolean;
+	reset_2_down : boolean;
     reset_3 : boolean;
 	served_1 : boolean;
 	served_2 : boolean;
@@ -138,6 +137,8 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
   ASSIGN
     reset_1 := (pressed_1 & (floor = 1 & door = open | earthquake));
     reset_2 := (pressed_2 & (floor = 2 & door = open | earthquake));
+	reset_2_up := (pressed_2_up & (floor = 2 & door = open & (last_dir = up | !pending_down) | earthquake));
+	reset_2_down := (pressed_2_down & (floor = 2 & door = open & (last_dir = down | !pending_up)  | earthquake));
     reset_3 := (pressed_3 & (floor = 3 & door = open | earthquake));
 
 	served_1 := (floor = 1 & door_cmd = open);
@@ -150,11 +151,17 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
     pending_here := (floor = 1 & pressed_1) | (floor = 2 & pressed_2) |
                     (floor = 3 & pressed_3);
 
-    pending_up   := (floor = 1 & (pressed_2 | pressed_3)) |
+    -- True if a directional request is made for the current floor and shall be fulfilled
+	pending_here_dir := (floor = 2 & pressed_2_up & (direction = up | !pending_down))
+					      | (floor = 2 & pressed_2_down & (direction = down | !pending_up));
+
+    pending_up   := (floor = 1 & (pressed_2 | pressed_2_up | pressed_2_down | pressed_3)) |
                     (floor = 2 & pressed_3);
 
-    pending_down := (floor = 3 & (pressed_1 | pressed_2)) |
-                    (floor = 2 & pressed_1) ;
+    pending_down := (floor = 3 & (pressed_1 | pressed_2 | pressed_2_up | pressed_2_down)) |
+                    (floor = 2 & pressed_1);
+	
+	-- pending_2_up := 
 
   -- * If the cabin is moving, do not send commands to the door.
   -- * If there is a pending request at the current floor and
@@ -165,9 +172,11 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
   ASSIGN
 	next(door_cmd) :=
       case
-      pending_here & door = closed & next(direction) = stop: open;
+	  -- open if request shall be fulfilled and door closed and cabin does not move
+      (pending_here | pending_here_dir) & door = closed & next(direction) = stop: open;
+	  -- emergency opening of the door
 	  earthquake & next(direction) = stop & door != open: open;
-	  !earthquake & (pending_up | pending_down) & door = open & !repair: close;
+	  !earthquake & (pending_up | pending_down) & door = open & !repair & next(direction) = stop: close;
       TRUE: nop;
       esac;
 
@@ -193,9 +202,21 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
     init(direction) := stop;
     next(direction) :=
       case
-	  !earthquake & next(door) = closed & pending_up & (!pending_here | direction = stop) & direction != down & (!pending_down | last_dir = up): up;
-      !earthquake & next(door) = closed & pending_down & (!pending_here | direction = stop) & direction != up & (!pending_up | last_dir = down): down;
-      TRUE: stop;
+	  -- move upwards if no earthquake, door closed request upstairs
+	  -- AND no request on current floor or request already fulfilled (someone spamming the button on this floor)
+	  -- AND does not invert direction of movement and no requst downstairs or already moving upwards
+	  !earthquake & next(door) = closed & pending_up
+	    & ((!pending_here & !pending_here_dir) | direction = stop)
+	    & direction != down & (!pending_down | last_dir = up): up;
+      
+	  -- move downwards if no earthquake, door closed and request downstairs
+	  -- AND no request on current floor or request already fulfilled (someone spamming the button on this floor)
+	  -- AND does not invert direction of movement and no requst upstairs or already moving downwards
+	  !earthquake & next(door) = closed & pending_down
+	    & ((!pending_here & !pending_here_dir) | direction = stop)
+	    & direction != up & (!pending_up | last_dir = down): down;
+      
+	  TRUE: stop;
       esac;
 	
 	next(earthquake) := case
@@ -219,12 +240,16 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
   --      corresponding floor and opens the door.
   SPEC AG((pressed_1 & AX !pressed_1) -> (door = open & floor = 1) | earthquake)
   SPEC AG((pressed_2 & AX !pressed_2) -> (door = open & floor = 2) | earthquake)
+  SPEC AG((pressed_2_up & AX !pressed_2_up) -> (door = open & floor = 2) | earthquake)
+  SPEC AG((pressed_2_down & AX !pressed_2_down) -> (door = open & floor = 2) | earthquake)
   SPEC AG((pressed_3 & AX !pressed_3) -> (door = open & floor = 3) | earthquake)
 
   -- REQ: A button must be reset as soon as the cabin stops at the
   --      corresponding floor with the door open.
   SPEC AG(door = open & floor = 1 & pressed_1 -> AX(!pressed_1))
   SPEC AG(door = open & floor = 2 & pressed_2 -> AX(!pressed_2))
+  SPEC AG(door = open & floor = 2 & pressed_2_up & (last_dir = up | !pending_down) -> AX(!pressed_2_up))
+  SPEC AG(door = open & floor = 2 & pressed_2_down & (last_dir = down | !pending_up)  -> AX(!pressed_2_down))
   SPEC AG(door = open & floor = 3 & pressed_3 -> AX(!pressed_3))
 
   -- REQ: The cabin can move only when the door is closed.
@@ -232,7 +257,7 @@ MODULE CTRL(floor, door, pressed_1, pressed_2, pressed_3, access_1, access_2, ac
 
   -- REQ: If no button is pressed, the controller must issue no commands
   --      and the cabin must be stopped.
-  SPEC AG(!pressed_1 & !pressed_2 & !pressed_3 -> direction = stop)
+  SPEC AG(!pressed_1 & !pressed_2 & !pressed_2_up & !pressed_2_down & !pressed_3 -> direction = stop)
 
   -- REQ: Each floor is only served if access is enabled, or if the elevator happens to start at that floor.
   -- Exception: earthquake
@@ -265,21 +290,28 @@ MODULE main
   VAR
     cabin : Cabin(ctrl.direction);
     door  : Door(ctrl.door_cmd);
-    button_1 : Button(ctrl.reset_1, ctrl.earthquake);
-    button_2 : Button(ctrl.reset_2, ctrl.earthquake);
-    button_3 : Button(ctrl.reset_3, ctrl.earthquake);
+    button_1 : Button(ctrl.reset_1, ctrl.earthquake, floor1_access);
+    button_2 : Button(ctrl.reset_2, ctrl.earthquake, floor2_access);
+	button_2_up : Button(ctrl.reset_2_up, ctrl.earthquake, floor2_access);
+	button_2_down : Button(ctrl.reset_2_down, ctrl.earthquake, floor2_access);
+    button_3 : Button(ctrl.reset_3, ctrl.earthquake, floor3_access);
     ctrl : CTRL(cabin.floor, door.status,
                 button_1.pressed, button_2.pressed,
                 button_3.pressed, button_1.access,
-				button_2.access, button_3.access);
+				button_2.access, button_3.access, 
+				button_2_up.pressed, button_2_down.pressed);
+	floor1_access : boolean;
+	floor2_access : boolean;
+	floor3_access : boolean;
+
+ASSIGN
+	next(floor1_access) := floor1_access;
+	next(floor2_access) := floor2_access;
+	next(floor3_access) := floor3_access;
+
+  -- Make sure all the floor 2 buttons have the same access permissions because it makes no sense otherwise
+  -- Moved the access properties to the main module for that reason
+  SPEC AG(button_2.access = button_2_down.access & button_2.access = button_2_up.access)
 
 
-
----------------------------------------------------------------------------
--- REQUIREMENTS                                                          --
----------------------------------------------------------------------------
-
-  -- The controller must satisfy the following requirements.  
-
-
----------------------------------------------------------------------------
+  -- COUNTEREXAMPE FOR INCORRECT PROPERTY
