@@ -21,24 +21,42 @@
 public class DiningPhil {
 
   static class Fork {
+
+    int index;
+
+    public Fork(int index){
+      this.index = index;
+    }
   }
 
   static class Philosopher extends Thread {
 
     Fork left;
     Fork right;
+    int index;
 
-    public Philosopher(Fork left, Fork right) {
+    public Philosopher(Fork left, Fork right, int index) {
       this.left = left;
       this.right = right;
+      this.index = index;
       start();
     }
 
     public void run() {
       // think!
-      synchronized (left) {
+      if(right.index > index){
+        synchronized (left) {
+          synchronized (right) {
+            //System.out.println("left first");
+            // eat!
+          }
+        }
+      } else {
         synchronized (right) {
-          // eat!
+          synchronized (left) {
+            //System.out.println("right first");
+            // eat!
+          }
         }
       }
     }
@@ -49,10 +67,10 @@ public class DiningPhil {
   public static void main(String[] args) {
     Fork[] forks = new Fork[N];
     for (int i = 0; i < N; i++) {
-      forks[i] = new Fork();
+      forks[i] = new Fork(i);
     }
     for (int i = 0; i < N; i++) {
-      new Philosopher(forks[i], forks[(i + 1) % N]);
+      new Philosopher(forks[i], forks[(i + 1) % N], i);
     }
   }
 }
