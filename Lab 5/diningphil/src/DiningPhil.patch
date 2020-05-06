@@ -1,83 +1,57 @@
---- DiningPhil.java	2020-05-06 11:51:04.908178500 +0200
-+++ DiningPhil_orig.java	2020-05-06 11:51:40.406206600 +0200
-@@ -19,45 +19,41 @@
+--- a/Lab 5/diningphil/src/DiningPhil_orig.java 
++++ b/Lab 5/diningphil/src/DiningPhil_orig.java 
+@@ -19,40 +19,45 @@
  //
  
  public class DiningPhil {
--  static class Fork {
--  }
--  static class Lock {
--  }
 -
--  static class Philosopher extends Thread {
- 
--    Fork left;
--    Fork right;
--    Lock lock;
--
--    public Philosopher(Fork left, Fork right, Lock lock) {
--      this.left = left;
--      this.right = right;
--      this.lock = lock;
--      start();
--    }
--
--    public void run() {
--     
--      synchronized (lock) {
--        synchronized (left) {
--          synchronized (right) {
--            // eat!
--          }
--	    	}
--      }
--    }
--  }
-+	static class Fork {
-+	}
-+  
-+	static class Philosopher extends Thread {
-+  
-+	  Fork left;
-+	  Fork right;
-+  
-+	  public Philosopher(Fork left, Fork right) {
-+		this.left = left;
-+		this.right = right;
-+		start();
-+	  }
-+  
-+	  public void run() {
-+		// think!
-+		synchronized (left) {
-+		  synchronized (right) {
-+			// eat!
-+		  }
-+		}
-+	  }
-+	}
-+	
-+	static final int N = 5;
+        static class Fork {
+        }
++       static class Lock {
++       }
    
--  static final int N = 5;
--  public static void main(String[] args) {
--    Lock lock = new Lock();
--    Fork[] forks = new Fork[N];
--    for (int i = 0; i < N; i++) {
--      forks[i] = new Fork();
--    }
--    for (int i = 0; i < N; i++) {
--      new Philosopher(forks[i], forks[(i + 1) % N], lock);
-+	public static void main(String[] args) {
-+	  Fork[] forks = new Fork[N];
-+	  for (int i = 0; i < N; i++) {
-+		forks[i] = new Fork();
-+	  }
-+	  for (int i = 0; i < N; i++) {
-+		new Philosopher(forks[i], forks[(i + 1) % N]);
-+	  }
- 	}
+        static class Philosopher extends Thread {
+   
+          Fork left;
+          Fork right;
++         Lock lock;
+   
+-         public Philosopher(Fork left, Fork right) {
++         public Philosopher(Fork left, Fork right, Lock lock) {
+                this.left = left;
+                this.right = right;
++               this.lock = lock;
+                start();
+          }
+   
+          public void run() {
+-               // think!
+-               synchronized (left) {
+-                 synchronized (right) {
+-                       // eat!
+-                 }
++          
++               synchronized (lock) {
++                 synchronized (left) {
++                       synchronized (right) {
++                         // eat!
++                       }
++                         }
+                }
+          }
+        }
+        
+        static final int N = 5;
+-  
+        public static void main(String[] args) {
++         Lock lock = new Lock();
+          Fork[] forks = new Fork[N];
+          for (int i = 0; i < N; i++) {
+                forks[i] = new Fork();
+          }
+          for (int i = 0; i < N; i++) {
+-               new Philosopher(forks[i], forks[(i + 1) % N]);
++               new Philosopher(forks[i], forks[(i + 1) % N], lock);
+          }
+        }
    }
--}
-+  
-\ No newline at end of file
