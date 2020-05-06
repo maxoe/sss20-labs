@@ -8,24 +8,24 @@ public class ProdCons {
     static Queue q;
 
     static class Producer extends Thread {
-	byte[] data;
+		byte[] data;
 
-	Producer(int i) {
-	    data = new byte[]{(byte)i, (byte)(i + DELTA)};
-	}
+		Producer(int i) {
+			data = new byte[]{(byte)i, (byte)(i + DELTA)};
+		}
 
-	public void run() {
-	    q.put(data);
-	}
+		public void run() {
+			q.put(data);
+		}
     }
 
     static class Consumer extends Thread {
-	public void run() {
-	    byte[] result = new byte[2];
-	    q.remove(result);
-	    System.out.println(result[0] + ", " + result[1]);
-	    assert (result[1] - result[0] == DELTA);
-	}
+		public void run() {
+			byte[] result = new byte[2];
+			q.remove(result);
+			System.out.println(result[0] + ", " + result[1]);
+			assert (result[1] - result[0] == DELTA);
+		}
     }
 
     /** Test. */
