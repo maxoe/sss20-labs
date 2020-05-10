@@ -23,7 +23,8 @@ public class Downloader extends Thread {
 	static boolean main_finished = false;
 	static boolean firstChunkOK = false;
 	static int firstWorkerStart = Integer.MAX_VALUE;
-	static int downloaders = DL_THREADS;
+	static Integer downloaders = DL_THREADS;
+
 
 	public static Downloader getMain() {
 		return main;
@@ -33,6 +34,7 @@ public class Downloader extends Thread {
 	}
 
 	public void die(String msg, Exception e) {
+		assert(false);
 		System.err.println(msg + ": " + e);
 		e.printStackTrace();
 		System.exit(1);
@@ -114,7 +116,9 @@ public class Downloader extends Thread {
 			end = length;
 		}
 		getData(is, start, end, true);
-		main_finished = true;
+		synchronized (output) {
+			main_finished = true;
+		}
 		System.out.println("Main download finished.");
 	}
 
@@ -138,15 +142,17 @@ public class Downloader extends Thread {
 		System.out.println("Worker: Download from " + start + " to " + end);
 		connect();
 		getData(is, start, end, false);
-		downloaders--;
-		if (downloaders == 0) { // workers finished
-			System.out.println("Workers finished.");
-			synchronized (output) {
-				if (firstChunkOK && !main_finished) {
-					try {
-						output.close();
-					} catch (IOException e) {
-						die("Error closing file", e);
+		synchronized (output){
+			downloaders--;
+			if (downloaders == 0) { // workers finished
+				System.out.println("Workers finished.");
+				synchronized (output) {
+					if (firstChunkOK && !main_finished) {
+						try {
+							output.close();
+						} catch (IOException e) {
+							die("Error closing file", e);
+						}
 					}
 				}
 			}
@@ -197,11 +203,12 @@ public class Downloader extends Thread {
 				if (r != -1) {
 					synchronized (output) {
 						if (main_finished ||
-						    (downloaders == 0 && firstChunkOK)) {
+								(downloaders == 0 && firstChunkOK)) {
 							return; // download done
 						}
 						writeBuf(pos, r, buffer);
 					}
+
 					pos += r;
 					synchronized (output) {
 						if (isMain && pos >= firstWorkerStart) {
