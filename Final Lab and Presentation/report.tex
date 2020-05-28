@@ -1,0 +1,64 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{biblatex}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{mwe}
+\usepackage{xcolor}
+
+\title{WannaCry Ransomeware Attack and Eternal Blue}
+\author{Emil Jonsson(emijonss), Max Oesterle, Ronghua Li}
+\date{\today}
+
+\bibliography{references}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+In May 2017 Windows machines were targeted by a ransomware cryptoworm nicknamed WannaCry. It encrypted all files on the targeted machine and demanded 300\$ in bitcoin be paid to a specified bitcoin wallet within a couple of days. The problem with this attack was that it could self propagate through a known vulnerability called EternalBlue (precisely CVE-2017-0145) using the publicly know dropper DOUBLEPULSAR, which caused it to spread quickly both on the local network and to random vulnerabe computers on the internet. It disrupted organizations worldwide with over 200,000 infected computers and caused up to 4 billion dollars of damage \cite{cbsnews}. Once a computer was affected a note was left on the machine explaining what had happened and giving instructions on how to pay with bitcoins to get the decryption key.
+
+\section{Spreading Mechanism}
+WannaCry scans the local network and random IP addresses for victims being vulnerable to EternalBlue. Once it has found a vulnerable IP address, it tries to infect the new victim and, if successful, runs modified code from the DOUBLEPULSAR backdoor on kernel level to drop its payload \cite{mssecurity}.
+
+\section{EternalBlue}
+EternalBlue is an exploit developed by the United States National Security Agency. It takes advantage of Microsoft's implementation of the Server Message Block (SMB) and can lead to arbitrary code execution on machines running the unpatched version of SMBv1 on Windows 7 or Windows Server 2008 and earlier \cite{checkpoint}.
+
+EternalBlue exploits 3 different bugs in Microsoft's SMB implementation by sending specially crafted messages to the SMBv1 server \cite{checkpoint}. The vulnerability was found several years before the WannaCry attack and kept secret by the NSA to make use of it in their own offensive operations. The hacker group Shadow Brokers, which is believed to operate from Russia \cite{defcon} stole the NSA's exploit amongst others from the NSA in early 2017, causing them to notify Microsoft. Shadow Brokers leaked the exploit to the public about a month after Microsoft issued a patch in April 2017. 
+
+\subsection{Bug 1 - Casting}
+The first bug occurs while converting a list of file extended attributes (FEA) into a different format. When updating the list's size (a 32-bit ulong), the size value is updated as if it was a 16-bit ushort. That means that the most significant 16 bits are not updated and the remaining size value is way larger than the actual allocated buffer size, which leads to a buffer overflow on the heap. The bug occurs for size values greater than or equal $2^{16}$ \cite{mssecurity2}.
+
+This bug could be found by a static code analysis tool which is checking unsafe parsing between types or a fuzzer tool which fuzzes the list size, combined with a dynamic checking of buffer accesses like valgrind does.
+% second bug
+%The second bug mentioned is what allows %someone to transmit data large enough that %it would cause Bug 1. There are two %separate 
+
+\subsection{Bug 2 - Parsing}
+The second bug allows to trigger bug 1. It uses the SMB transaction sub-commands which basically split a sub-command (respectively its data) into multiple requests if the data to be sent exceeds a certain value. First, a primary transaction request is sent, followed by multiple secondary transaction requests.
+The exploit uses two different types of the transaction function, Trans2 and NT Trans. The field specifying the amount of data which can be sent is located in the request header. For the NT Trans version this field has the size DWORD, for the Trans2 version it has the size WORD. The amount of data which can be sent therefore differs. Also, no validation exists if the secondary request matches the previous request. It is possible to send a NT Trans primary request followed by a Trans2 secondary request. The Trans2 request will be parsed as a NT Trans request which means that its WORD-sized header field will be treated as a DWORD field. Bug 1 is triggered \cite{checkpoint}.
+
+This parsing bug might have been found by verifying the processing of different possible request orders. The request order leading to wrong parsing would have triggered bug 1 which than could have been backtracked to wrong parsing.
+
+
+\subsection{Bug 3 - Allocation}
+% TODO:
+% I feel like that paragraph spits a lot of information which is not necessarily know to the reader without explaining it further.
+% We have no space for explaining all of these, Maybe it would better to leave out the exact technical names ("pool", "heap grooming phase") and replace it with what they actually do/represent? Goal should be that a reader could understand the paragraph without having to google too much
+The overflow mentioned above occurs in a large non-paged pool structure in memory. Large non-paged pools do not have pool headers. Therefore, a tightly connected pool can be allocated after a previous pool which contains driver data. In the heap grooming phase, a hole is left to be filled by a specified size of data later. However, when FEA list transforms into NTFEA list, the data size is actually way more larger than the allocated hole, which would cause out of bound writes to the next chunk. This will then lead to the data overflow to the vulnerable buffer where attacker can execute malicious code \cite{eternalb}.
+
+% TODO:
+% What techniques could have prevented that? Can valgind detect that?
+
+
+
+\section{Solution}
+WannaCry had a built in kill switch where it attempted to poll a specific ip-address before running. If this domain was found the program would stop, otherwise it would attempt to spread. The kill switch was found by a malware analysis expert named MalwareTech who decided to register the domain and hereby stopped the spread \cite{malwaretech}.
+The stop was only temporary since simply removing the code which queried the domain removed the kill switch. Nonetheless, it probably saved billions of dollars of damage by giving potential victims time to remove the vulnerability.
+
+Microsoft released patches for Windows XP, 7, 8, and Windows Server 2003 which fixed the EternalBlue bugs. Reports from two years after the incident claim that around a million computers are still vulnerable to EternalBlue and the vulnerability is still actively use for exploits and WannaCry-like ransomware.\cite{bleep}
+
+
+\printbibliography[heading=bibintoc]
+\end{document}
